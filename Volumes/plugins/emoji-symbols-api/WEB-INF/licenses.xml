@@ -1,2 +1,0 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<l:dependencies xmlns:l='licenses' groupId='io.jenkins.plugins' artifactId='emoji-symbols-api' version='16.0-26.v9818ff7423f0'><l:dependency name='Emoji Symbols API Plugin' groupId='io.jenkins.plugins' artifactId='emoji-symbols-api' version='16.0-26.v9818ff7423f0' url='https://github.com/jenkinsci/emoji-symbols-api-plugin'><l:description>Bundles Unicode Emojis as symbols to be used by other plugins.</l:description><l:license name='MIT License' url='https://opensource.org/license/mit/'/></l:dependency></l:dependencies>
