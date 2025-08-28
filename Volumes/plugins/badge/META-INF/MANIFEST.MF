@@ -1,0 +1,30 @@
+Manifest-Version: 1.0
+Created-By: Maven Archiver 3.6.3
+Build-Jdk-Spec: 21
+Specification-Title: Badge
+Specification-Version: 2.9
+Implementation-Title: Badge
+Implementation-Version: 2.9.1
+Group-Id: org.jenkins-ci.plugins
+Artifact-Id: badge
+Short-Name: badge
+Long-Name: Badge
+Url: https://github.com/jenkinsci/badge-plugin
+Compatible-Since-Version: 2.0
+Plugin-Version: 2.9.1
+Hudson-Version: 2.492.3
+Jenkins-Version: 2.492.3
+Plugin-Dependencies: commons-lang3-api:3.18.0-98.v3a_674c06072d,commons-
+ text-api:1.13.1-176.v74d88f22034b_,emoji-symbols-api:16.0-26.v9818ff742
+ 3f0,ionicons-api:88.va_4187cb_eddf1,workflow-step-api:704.ve4f0967e98fa
+ _,script-security:1373.vb_b_4a_a_c26fa_00,structs:350.v3b_30f09f2363
+Plugin-Developers: Daniel Krämer:strangelookingnerd:,Marc Brugger:bakit
+ o:,Stefan Wolf:wolfs:,Serban Iordache:beryx:
+Plugin-License-Name: The MIT license
+Plugin-License-Url: https://opensource.org/licenses/mit-license.php
+Plugin-ScmConnection: scm:git:https://github.com/jenkinsci/badge-plugin.
+ git
+Plugin-ScmTag: badge-2.9.1
+Plugin-ScmUrl: https://github.com/jenkinsci/badge-plugin
+Implementation-Build: 83ce20288d577169bd3e7102c5c6631a3eb47dcd
+
