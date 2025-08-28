@@ -1,8 +1,8 @@
 # Jenkins specific files
-Jenkins/Volumes/*
-!Jenkins/Volumes/.gitkeep
-Jenkins/Logs/*
-!Jenkins/Logs/.gitkeep
+Volumes/*
+!Volumes/.gitkeep
+Logs/*
+!Logs/.gitkeep
 jenkins_home/
 
 # Docker files
