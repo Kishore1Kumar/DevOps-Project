@@ -1,77 +1,41 @@
-# Jenkins specific files
-Volumes/*
+# Jenkins runtime data (not committed)
+Volumes/
+Logs/
 !Volumes/.gitkeep
-Logs/*
 !Logs/.gitkeep
-jenkins_home/
 
-# Docker files
+# Jenkins internal home inside volume mount (appears after first run)
+Jenkins/jenkins_home/
+
+# Env / secrets
 .env
-docker-compose.override.yml
 
-# IDE files
+# Logs
+*.log
+
+# OS / Editor
+.DS_Store
+Thumbs.db
 .vscode/
 .idea/
-*.swp
-*.swo
-*~
+*.code-workspace
 
-# OS generated files
-.DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
-Thumbs.db
-
-# Temporary files
-*.tmp
-*.temp
-*.log
-*.pid
-*.seed
-*.pid.lock
-
-# Node modules (if using any Node.js tools)
-node_modules/
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# Python (if using Python scripts)
+# Python cache
 __pycache__/
 *.py[cod]
-*$py.class
-*.so
-.Python
-venv/
-env/
-.venv/
-.env/
 
-# Secrets and sensitive data
-*.key
-*.pem
-*.p12
-*.jks
-secrets.txt
-.secrets/
-credentials/
+# Node (future)
+node_modules/
+yarn.lock
+package-lock.json
+pnpm-lock.yaml
 
-# Build artifacts
-dist/
-build/
-target/
-*.war
-*.jar
-*.ear
-
-# Backup files
+# Temp / backup / swap
+*.tmp
+*.temp
 *.bak
-*.backup
 *.old
-
-# Local configuration overrides
-local.properties
-config.local.*
+*.orig
+*.rej
+*.swp
+*.swo
