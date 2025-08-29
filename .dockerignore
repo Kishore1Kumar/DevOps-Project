@@ -1,0 +1,27 @@
+# Exclude unnecessary files from Docker build context
+.git
+.gitignore
+.dockerignore
+README.md
+LICENSE
+*.md
+Volumes/*
+Logs/*
+Jenkins/jenkins_home/*
+node_modules
+__pycache__
+*.py[cod]
+*.log
+*.tmp
+*.swp
+*.swo
+*.bak
+*.orig
+*.rej
+coverage/
+dist/
+build/
+tmp/
+tests/
+.vscode/
+.idea/

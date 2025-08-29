@@ -1,0 +1,19 @@
+services:
+  jenkins-master:
+    build:
+      context: ./Jenkins
+      dockerfile: Dockerfile
+    container_name: jenkins-master
+    restart: unless-stopped
+    environment:
+      CASC_JENKINS_CONFIG: /var/jenkins_home/casc/jenkins.yaml
+      JENKINS_ADMIN_PASSWORD: admin123
+    ports:
+      - "8080:8080"
+      - "50000:50000"
+    volumes:
+      - ./Volumes/jenkins-master:/var/jenkins_home
+      - ./Logs/jenkins-master:/var/jenkins_home/logs
+networks:
+  default:
+    name: devops-network

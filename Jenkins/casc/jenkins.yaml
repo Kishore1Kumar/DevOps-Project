@@ -1,8 +1,8 @@
 jenkins:
   systemMessage: |
-    Jenkins is configured via Configuration as Code.
-    Changes here are source-controlled and reproducible.
-  numExecutors: 2
+    Jenkins Master configured via Configuration as Code.
+    Admin user password comes from JENKINS_ADMIN_PASSWORD (dev only).
+  numExecutors: 0
   mode: NORMAL
 
   securityRealm:
@@ -10,17 +10,31 @@ jenkins:
       allowsSignup: false
       users:
         - id: "admin"
-          password: "${JENKINS_ADMIN_PASSWORD:-admin123}"
+          password: "${JENKINS_ADMIN_PASSWORD}"
 
   authorizationStrategy:
     loggedInUsersCanDoAnything:
       allowAnonymousRead: false
+
+  nodes:
+    - permanent:
+        name: "docker-agent-1"
+        remoteFS: "/home/jenkins/agent"
+        launcher:
+          inbound:
+            webSocket: false
+        numExecutors: 2
+        labelString: "docker linux"
+        retentionStrategy:
+          always: {}
+        nodeProperties:
+          - envVars:
+              env:
+                - key: "JAVA_HOME"
+                  value: "/opt/java/openjdk"
 
 unclassified:
   location:
     url: "http://localhost:8080/"
   timestamper:
     allPipelines: true
-
-# Optionally, you can seed folders/jobs via Job DSL at first boot by adding a seed job here.
-# See: https://plugins.jenkins.io/job-dsl/

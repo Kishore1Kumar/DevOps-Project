@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  jenkins-master:
+    extends:
+      file: ./Jenkins/docker-compose.yml
+      service: jenkins-master
+
+networks:
+  devops-net:
+    driver: bridge
+
+volumes: {}
+
