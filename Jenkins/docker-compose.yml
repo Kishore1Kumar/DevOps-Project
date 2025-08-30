@@ -11,11 +11,41 @@ services:
       - "50000:50000"
     volumes:
       - ../Volumes/jenkins-master:/var/jenkins_home
-      - ../Logs/jenkins-master:/var/jenkins_home/logs
       - /var/run/docker.sock:/var/run/docker.sock
     restart: unless-stopped
     networks:
       - devops-net
+    env_file:
+      - ../.env
+    cpus: 2
+    mem_limit: 4g
+    healthcheck:
+      test: ["CMD-SHELL", "curl -sf http://localhost:8080/login || exit 1"]
+      interval: 20s
+      timeout: 5s
+      retries: 10
+      start_period: 40s
+
+  jenkins-agent-1:
+    image: jenkins/inbound-agent:latest-jdk17
+    container_name: jenkins-agent-1
+    depends_on:
+      - jenkins-master
+    environment:
+      JENKINS_URL: "http://jenkins-master:8080"
+      JENKINS_AGENT_NAME: "agent-1"
+      JENKINS_SECRET: "${JENKINS_AGENT_1_SECRET}"
+      JENKINS_AGENT_WORKDIR: "/home/jenkins/agent"
+    volumes:
+      - ../Volumes/jenkins-agent-1:/home/jenkins/agent
+      - /var/run/docker.sock:/var/run/docker.sock
+    restart: unless-stopped
+    networks:
+      - devops-net
+    env_file:
+      - ../.env
+    cpus: 1
+    mem_limit: 2g
 
 networks:
   devops-net:

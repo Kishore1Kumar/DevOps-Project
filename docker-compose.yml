@@ -5,6 +5,10 @@ services:
     extends:
       file: ./Jenkins/docker-compose.yml
       service: jenkins-master
+  jenkins-agent-1:
+    extends:
+      file: ./Jenkins/docker-compose.yml
+      service: jenkins-agent-1
 
 networks:
   devops-net:
